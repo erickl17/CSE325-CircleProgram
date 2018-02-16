@@ -28,36 +28,46 @@ void loop()                // Loop function which will be run forever
 
 void driveSquare() 
 {  
-  carServo.write(93); 
+  carServo.write(93); // Sets wheels straight
   delay(5000);
-  analogWrite(pwmToMotor, carSpeed);
+  
+  // Drives car forward at 10% duty for 4 seconds
+  analogWrite(pwmToMotor, carSpeed);  
   delay(4000);
-  carServo.write(150); 
+
+  // Turns and drives to the right for 1.415 seconds
+  carServo.write(150);
   delay(1415);
+
+  // Returns wheels straight and drives for 4 seconds
   carServo.write(93); 
   delay(4000);
+
+  // Turns and drives to the right for 1.415 seconds
   carServo.write(150); 
   delay(1415);
+
+  // Returns wheels straight and drives for 4 seconds
   carServo.write(93); 
   delay(4000);
+
+  // Turns and drives to the right for 1.415 seconds
   carServo.write(150); 
   delay(1415);
+
+  // Returns wheels straight and drives for 4 seconds
   carServo.write(93); 
   delay(4000);
+
+  // Turns and drives to the right for 1.250 seconds to return to original position
   carServo.write(150); 
   delay(1250);
-
   
-  //analogWrite(pwmToMotor, carSpeed);
-  //delay(1500);
- // analogWrite(pwmToMotor, 0);
- // delay(500);
 }
 
 void carStop() 
 {
-  // The code to stop the car
-    analogWrite(pwmToMotor, 0);
+    analogWrite(pwmToMotor, 0); // Stops car
 }
 
 
